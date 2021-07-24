@@ -15,10 +15,12 @@ class Question(models.Model):
 
 
 	def was_published_recently(self):
-		''' A custom method to check if question is recent'''
+		''' 
+		A custom method to check if question is recent
+		'''
 		
-		return self.pub_date >= timezone.now() - timedelta(days=1)
-
+		now = timezone.now()
+		return now - timedelta(days=1) <= self.pub_date <= now
 
 
 class Choice(models.Model):
