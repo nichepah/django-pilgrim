@@ -18,7 +18,6 @@ class Question(models.Model):
 		''' 
 		A custom method to check if question is recent
 		'''
-		
 		now = timezone.now()
 		return now - timedelta(days=1) <= self.pub_date <= now
 
