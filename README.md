@@ -1,6 +1,8 @@
 apt-get install python3-django
 django-admin --version
 
+Reference: Django Documentation, Release 4.0.dev20210603072047
+
 -----
 django-admin startproject mydjango1
 python manage.py createsuperuser
@@ -22,7 +24,6 @@ within mydjango1/mydjango1
 			urls.py
 			wsgi.py		
 			migrations/
-			
 			
 			
 Running django with gunicorn
@@ -52,10 +53,10 @@ These patterns are tested in order.
 	path('articles/<int:year>/<int:month>/<slug:slug>/', views.article_detail),
 	]
 	
-
 In forms.py
 	message = forms.CharField(widget=forms.Textarea)
 
+--
 
-------------
+
 git remote add origin https://github.com/nichepah/django-pilgrim.git
