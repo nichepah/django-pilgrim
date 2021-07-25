@@ -21,3 +21,8 @@ class QuestionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Question ,  QuestionAdmin)
+
+# set site title 
+admin.site.site_title = "Ammus Page"
+# This is done in /templates/base_html
+# admin.site.site_header = "Kunjiris Admin Page"

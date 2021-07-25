@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ 'Muse' }} | {{ site_title|default:_(' ') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}"> Kunjiri's Admin Page</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
