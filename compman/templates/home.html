@@ -3,10 +3,12 @@
 
 {% block breadcrumb %}
     <li class="breadcrumb-item active text-white ">Complaint Boards</li>
+
 {% endblock %}
 
 
 {% block content %}
+      {% csrf_token %}
      <table class="table">
         <thead class="thead-inverse">
           <tr>
@@ -20,7 +22,7 @@
           {% for board in boards %}
             <tr>
               <td>
-                {{ board.name }}
+                <a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a>
                 <small class="text-muted d-block">{{ board.description }}</small>
               </td>
               <td class="align-middle">0</td>

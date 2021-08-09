@@ -25,19 +25,28 @@ SECRET_KEY = '%yq@^t*oc)@bs(k4!5ob4bn50-sod$zwt=m8#$ws=dmkxm!9^_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [   'localhost', 
+                    '127.0.0.1', 
+                    '10.151.7.169'
+                ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'boards',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'widget_tweaks',
+
+    'boards',
+
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +132,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static/compman/static/"),
 ]
+
+LOGOUT_REDIRECT_URL = 'home'
+
+LOGIN_REDIRECT_URL = 'home'
+
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
